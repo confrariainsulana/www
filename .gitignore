@@ -25,3 +25,6 @@ dist-ssr
 
 # Variáveis de ambiente locais
 .env
+
+# Configuração local do Claude Code
+.claude/

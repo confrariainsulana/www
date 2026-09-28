@@ -6,5 +6,5 @@ export default defineConfig({
   plugins: [react()],
   // Caminho do site no GitHub Pages: https://<usuario>.github.io/<repositorio>/
   // Se o repositório tiver outro nome, altere aqui (mantenha as barras).
-  base: '/confraria-insulana/',
+  base: '/www/',
 })

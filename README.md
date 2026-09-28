@@ -3,7 +3,7 @@
 Site institucional da **Confraria Insulana**, confraria de cervejeiros caseiros da Ilha do Governador (RJ), desde 2014.
 Página única feita em React 18 + Vite, publicada no GitHub Pages.
 
-- Endereço (depois de publicar): `https://<seu-usuario>.github.io/confraria-insulana/`
+- Endereço (depois de publicar): `https://confrariainsulana.github.io/www/`
 
 ## ⚠️ Pendências: `[COMPLETAR: ...]`
 
@@ -19,7 +19,7 @@ Outras pendências que não aparecem como marcador:
 
 - **Links e fotos da lojinha:** todos os produtos apontam para `https://www.mercadolivre.com.br/SUBSTITUIR` e usam ilustrações provisórias (veja [Lojinha](#lojinha-adicionar-e-editar-produtos)).
 - **ID do Formspree:** sem ele, o formulário de contato mostra um aviso de erro (veja [Formspree](#formulário-de-contato-formspree)).
-- **Imagem de prévia (Open Graph):** em `index.html`, troque `%BASE_URL%og-image.jpg` pela URL absoluta (`https://<seu-usuario>.github.io/confraria-insulana/og-image.jpg`) depois do primeiro deploy, para o WhatsApp e as redes mostrarem a prévia do link.
+- **Imagem de prévia (Open Graph):** está fixada em `https://confrariainsulana.github.io/www/og-image.jpg` no `index.html`. Se o endereço do site mudar (outro repositório ou domínio próprio), atualize `og:image` e `og:url`.
 
 Para encontrar tudo de uma vez:
 
@@ -39,7 +39,7 @@ npm install
 npm run dev
 ```
 
-O site abre em `http://localhost:5173/confraria-insulana/`.
+O site abre em `http://localhost:5173/www/`.
 
 Para testar a versão de produção (igual à publicada):
 
@@ -53,7 +53,7 @@ npm run preview
 
 ## Publicar no GitHub Pages
 
-1. Crie um repositório no GitHub chamado **`confraria-insulana`**.
+1. Crie um repositório no GitHub chamado **`www`**.
    - Se usar outro nome, altere `base` em `vite.config.js` para `'/<nome-do-repositorio>/'`.
 2. Envie o código para a branch `main`:
    ```bash
@@ -61,7 +61,7 @@ npm run preview
    git add .
    git commit -m "Site da Confraria Insulana"
    git branch -M main
-   git remote add origin https://github.com/<seu-usuario>/confraria-insulana.git
+   git remote add origin https://github.com/confrariainsulana/www.git
    git push -u origin main
    ```
 3. No GitHub, vá em **Settings → Pages → Build and deployment → Source** e escolha **GitHub Actions**.
