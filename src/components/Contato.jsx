@@ -1,11 +1,11 @@
 import { useRef, useState } from 'react'
-import { contatos, FORMSPREE_ID, FORMSPREE_URL } from '../data/links'
+import { contatos } from '../data/links'
+import { EMAIL_VALIDO, enviarFormspree } from '../utils/formspree'
 import { Lupulo } from './Icones'
 import styles from './Contato.module.css'
 
 const assuntos = ['Quero me associar', 'Lojinha', 'Parcerias e eventos', 'Outro']
 const vazio = { nome: '', email: '', assunto: '', mensagem: '', _gotcha: '' }
-const EMAIL_VALIDO = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/
 
 function validar(dados) {
   const erros = {}
@@ -70,32 +70,21 @@ export default function Contato() {
       setStatus('sucesso')
       return
     }
-    if (!FORMSPREE_ID) {
-      setStatus('erro')
-      setMensagemErro('O formulário ainda não foi configurado (falta o VITE_FORMSPREE_ID). Tente pelos contatos ao lado.')
-      return
-    }
-
     setStatus('enviando')
     try {
-      const resposta = await fetch(FORMSPREE_URL, {
-        method: 'POST',
-        headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          nome: dados.nome.trim(),
-          email: dados.email.trim(),
-          _replyto: dados.email.trim(),
-          assunto: dados.assunto,
-          _subject: `[Site] ${dados.assunto} – ${dados.nome.trim()}`,
-          mensagem: dados.mensagem.trim(),
-        }),
+      await enviarFormspree({
+        nome: dados.nome.trim(),
+        email: dados.email.trim(),
+        _replyto: dados.email.trim(),
+        assunto: dados.assunto,
+        _subject: `[Site] ${dados.assunto} – ${dados.nome.trim()}`,
+        mensagem: dados.mensagem.trim(),
       })
-      if (!resposta.ok) throw new Error(`HTTP ${resposta.status}`)
       setStatus('sucesso')
       setDados(vazio)
-    } catch {
+    } catch (erro) {
       setStatus('erro')
-      setMensagemErro('Não foi possível enviar agora. Verifique sua conexão e tente de novo, ou fale com a gente pelos contatos ao lado.')
+      setMensagemErro(erro.message)
     }
   }
 

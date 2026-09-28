@@ -123,3 +123,69 @@
 .produto:hover .comprar {
   background: #fff159;
 }
+
+/* ---------- produto em breve ---------- */
+
+.emBreve:hover {
+  transform: none;
+  border-color: rgb(245 233 211 / 0.12);
+}
+
+.moldura {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Fita diagonal sobre a imagem */
+.fita {
+  position: absolute;
+  top: 1.1rem;
+  right: -2.6rem;
+  width: 10rem;
+  padding: 0.2rem 0;
+  transform: rotate(35deg);
+  background: var(--laranja);
+  color: var(--roxo-profundo);
+  font-size: 1.05rem;
+  text-align: center;
+  box-shadow: 0 0.25rem 0.5rem rgb(0 0 0 / 0.35);
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+  font-size: var(--t-pequeno);
+  font-weight: 600;
+  color: var(--creme-suave);
+}
+
+.statusIcone {
+  flex: none;
+  width: 0.8rem;
+  height: auto;
+  color: var(--laranja);
+}
+
+.avise {
+  margin-top: 0.6rem;
+  min-height: 2.75rem;
+  padding: 0.5rem;
+  border: 2px solid var(--laranja);
+  border-radius: 0.5rem;
+  background: transparent;
+  color: var(--laranja);
+  font-family: var(--fonte-titulo);
+  font-size: 1.3rem;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    background-color 0.15s,
+    color 0.15s;
+}
+.avise:hover {
+  background: var(--laranja);
+  color: var(--roxo-profundo);
+}

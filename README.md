@@ -11,14 +11,14 @@ Os marcadores `[COMPLETAR: ...]` já foram todos resolvidos. Se precisar marcar 
 
 Pendências abertas:
 
-- **Links e fotos da lojinha:** todos os produtos apontam para `https://www.mercadolivre.com.br/SUBSTITUIR` e usam ilustrações provisórias (veja [Lojinha](#lojinha-adicionar-e-editar-produtos)).
-- **ID do Formspree:** sem ele, o formulário de contato mostra um aviso de erro (veja [Formspree](#formulário-de-contato-formspree)).
+- **Links e fotos da lojinha:** os produtos ainda não têm anúncio (aparecem como "Em breve" com o botão "Avise-me") e usam ilustrações provisórias (veja [Lojinha](#lojinha-adicionar-e-editar-produtos)).
+- **ID do Formspree:** sem ele, o formulário de contato e o "Avise-me" da lojinha mostram um aviso de erro (veja [Formspree](#formulário-de-contato-formspree)).
 - **Imagem de prévia (Open Graph):** está fixada em `https://confrariainsulana.github.io/www/og-image.jpg` no `index.html`. Se o endereço do site mudar (outro repositório ou domínio próprio), atualize `og:image` e `og:url`.
 
 Para encontrar tudo de uma vez:
 
 ```bash
-grep -rn "COMPLETAR\|SUBSTITUIR" src index.html
+grep -rn "COMPLETAR\|urlMercadoLivre: ''" src index.html
 ```
 
 ## Rodar localmente
@@ -78,6 +78,8 @@ Para testar localmente, copie `.env.example` para `.env.local` e preencha o ID.
 
 O formulário já tem validação, os estados de "enviando", sucesso e erro, e um campo escondido (`_gotcha`) contra spam.
 
+Os pedidos do botão **"Avise-me"** da lojinha chegam pelo mesmo Formspree, com o assunto `[Lojinha] Avise-me: <produto> (<quantidade> un.)` e os campos produto, quantidade, telefone e e-mail.
+
 ## Lojinha: adicionar e editar produtos
 
 Os produtos ficam em `src/data/produtos.js`:
@@ -88,7 +90,7 @@ Os produtos ficam em `src/data/produtos.js`:
   nome: 'Camisa Clássica Insulana – Preta',
   categoria: 'camisas',                     // camisas | bones | copos | tap-handles
   imagem: camisaClassicaPreta,              // import do topo do arquivo
-  urlMercadoLivre: 'https://www.mercadolivre.com.br/…',
+  urlMercadoLivre: 'https://www.mercadolivre.com.br/…', // vazio ('') = "Em breve" + botão Avise-me
   alt: 'Camisa preta com o logo laranja no peito', // opcional, descreve a foto
 },
 ```
@@ -98,6 +100,8 @@ Para trocar a foto:
 1. Salve a imagem em `src/assets/produtos/`, de preferência quadrada (~800×800, `.webp` ou `.jpg`).
 2. Importe no topo de `produtos.js`: `import camisaNova from '../assets/produtos/camisa-nova.webp'`
 3. Use `imagem: camisaNova` no produto.
+
+Enquanto `urlMercadoLivre` estiver vazio, o cartão mostra a fita "Em breve", o aviso "Ainda no fermentador" e o botão **Avise-me**, que abre uma janela para o visitante informar produto, quantidade, telefone e e-mail. Quando você preencher o link, o cartão vira automaticamente um botão "Comprar no Mercado Livre".
 
 Para **adicionar** um produto, copie um bloco `{ … }` e ajuste. Para **remover**, apague o bloco. Os preços não aparecem no site: eles ficam no anúncio do Mercado Livre.
 
