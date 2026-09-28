@@ -9,10 +9,13 @@ export const FORMSPREE_ID = import.meta.env.VITE_FORMSPREE_ID || ''
 export const FORMSPREE_URL = `https://formspree.io/f/${FORMSPREE_ID || 'SEU_ID'}`
 
 // Redes e contato da confraria.
-// Quando tiver os dados, troque `texto` e `url` (ex.: texto: '@confrariainsulana', url: 'https://instagram.com/confrariainsulana').
+// `texto` é o que aparece no site; `url` é para onde o link leva.
 export const contatos = {
-  instagram: { texto: '[COMPLETAR: @instagram]', url: '' },
-  email: { texto: '[COMPLETAR: email]', url: '' },
+  instagram: {
+    texto: 'https://www.instagram.com/confrariainsulana/',
+    url: 'https://www.instagram.com/confrariainsulana/',
+  },
+  email: { texto: 'confrariainsulana1@gmail.com', url: 'mailto:confrariainsulana1@gmail.com' },
   local: 'Ilha do Governador · Rio de Janeiro',
 }
 

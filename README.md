@@ -5,17 +5,11 @@ Página única feita em React 18 + Vite, publicada no GitHub Pages.
 
 - Endereço (depois de publicar): `https://confrariainsulana.github.io/www/`
 
-## ⚠️ Pendências: `[COMPLETAR: ...]`
+## ⚠️ Pendências
 
-Estes marcadores aparecem no site com fundo listrado amarelo para ficarem fáceis de achar:
+Os marcadores `[COMPLETAR: ...]` já foram todos resolvidos. Se precisar marcar algo pendente no futuro, use `<span className="completar">[COMPLETAR: ...]</span>`: ele aparece no site com fundo listrado amarelo.
 
-| Marcador | Arquivo | O que fazer |
-|---|---|---|
-| `[COMPLETAR: como/onde foi o primeiro encontro]` | `src/components/Confraria.jsx` (1º parágrafo) | Trocar o `<span className="completar">…</span>` por uma frase contando o primeiro encontro. |
-| `[COMPLETAR: @instagram]` | `src/data/links.js` → `contatos.instagram` | Preencher `texto` (ex.: `'@confrariainsulana'`) e `url` (ex.: `'https://instagram.com/confrariainsulana'`). |
-| `[COMPLETAR: email]` | `src/data/links.js` → `contatos.email` | Preencher `texto` (ex.: `'contato@exemplo.com'`) e `url` (ex.: `'mailto:contato@exemplo.com'`). |
-
-Outras pendências que não aparecem como marcador:
+Pendências abertas:
 
 - **Links e fotos da lojinha:** todos os produtos apontam para `https://www.mercadolivre.com.br/SUBSTITUIR` e usam ilustrações provisórias (veja [Lojinha](#lojinha-adicionar-e-editar-produtos)).
 - **ID do Formspree:** sem ele, o formulário de contato mostra um aviso de erro (veja [Formspree](#formulário-de-contato-formspree)).
@@ -144,4 +138,4 @@ src/styles/                    variáveis (cores/fontes) e estilos globais
 | Creme | `#F5E9D3` | texto |
 | Verde | `#187F28` | botão "Torne-se um associado" |
 
-Fontes (Google Fonts): **Bebas Neue** nos títulos, **Grenze Gotisch** em "Seja um associado!" e no lema "Boa cerveja gera grandes histórias.", **Permanent Marker** em detalhes manuscritos e **Inter** no texto.
+Fontes (Google Fonts): **Bebas Neue** nos títulos, **Grenze Gotisch** nas chamadas ("Seja um associado!", "Boa cerveja gera grandes histórias.", "Desde 2014 na Ilha" e o selo "Melhor opção") e **Inter** no texto.

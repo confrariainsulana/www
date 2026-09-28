@@ -90,8 +90,10 @@
   padding: 0.2rem 0.75rem;
   background: var(--verde);
   color: #fff;
-  font-family: var(--fonte-pincel);
-  font-size: 0.95rem;
+  font-family: var(--fonte-gotica);
+  font-weight: 800;
+  font-size: 1.15rem;
+  line-height: 1.2;
   transform: rotate(4deg);
   border-radius: 0.25rem;
   box-shadow: 0 0.25rem 0.5rem rgb(0 0 0 / 0.3);

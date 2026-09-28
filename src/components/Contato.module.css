@@ -145,6 +145,7 @@ textarea.entrada {
 .contatos li {
   display: grid;
   gap: 0.15rem;
+  overflow-wrap: anywhere; /* URL longa não estoura a coluna no celular */
 }
 
 .rotulo {

@@ -10,16 +10,15 @@ export default function Confraria() {
           <h2 id="confraria-titulo" className="titulo-secao">
             A Confraria
           </h2>
-          <p className={`pincel ${styles.desde}`}>Desde 2014 na Ilha</p>
+          <p className={`gotica ${styles.desde}`}>Desde 2014 na Ilha</p>
           <SeparadorLupulo />
         </header>
 
         <div className={styles.historia}>
           <p>
             Tudo começou em 2014, na Ilha do Governador, quando um grupo de amigos apaixonados por cerveja
-            decidiu trocar as panelas solitárias por uma brassagem em boa companhia.{' '}
-            <span className="completar">[COMPLETAR: como/onde foi o primeiro encontro]</span>. Dali nasceu a
-            Confraria Insulana.
+            decidiu trocar as panelas solitárias por uma brassagem em boa companhia. Dali nasceu a Confraria
+            Insulana.
           </p>
           <p>
             De lá pra cá, a confraria virou ponto de encontro de quem faz, estuda e aprecia cerveja na Ilha. Tem

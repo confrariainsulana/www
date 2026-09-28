@@ -128,11 +128,6 @@ textarea {
   font-weight: 800;
 }
 
-.pincel {
-  font-family: var(--fonte-pincel);
-  font-weight: 400;
-}
-
 .sr-only {
   position: absolute;
   width: 1px;
