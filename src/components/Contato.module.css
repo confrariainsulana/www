@@ -1,0 +1,190 @@
+.grade {
+  display: grid;
+  gap: 2.5rem;
+}
+
+.cabeca {
+  display: grid;
+  gap: 1rem;
+}
+
+/* ---------- formulário ---------- */
+
+.form {
+  display: grid;
+  gap: 1.25rem;
+  padding: clamp(1.25rem, 1rem + 2vw, 2.25rem);
+  background: var(--roxo-escuro);
+  border: 1px solid rgb(245 233 211 / 0.12);
+  border-top: 4px solid var(--laranja);
+  border-radius: 0.25rem 0.25rem var(--raio) var(--raio);
+}
+
+.obrigatorios {
+  font-size: var(--t-pequeno);
+  color: var(--creme-suave);
+}
+
+.linha {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.campo {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.campo label {
+  font-weight: 600;
+}
+
+.entrada {
+  width: 100%;
+  min-height: 3rem;
+  padding: 0.7rem 0.9rem;
+  background: var(--roxo-profundo);
+  color: var(--creme);
+  border: 2px solid rgb(245 233 211 / 0.3);
+  border-radius: 0.5rem;
+  transition: border-color 0.15s;
+}
+.entrada:hover {
+  border-color: rgb(245 233 211 / 0.55);
+}
+.entrada:focus-visible {
+  outline: 3px solid var(--laranja-claro);
+  outline-offset: 1px;
+  border-color: var(--laranja);
+}
+.entrada[aria-invalid='true'] {
+  border-color: var(--erro);
+}
+
+select.entrada {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23F28A1A' stroke-width='2'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 0.8rem;
+  padding-right: 2.5rem;
+}
+select.entrada option {
+  background: var(--roxo-profundo);
+  color: var(--creme);
+}
+
+textarea.entrada {
+  resize: vertical;
+  min-height: 8rem;
+}
+
+.erroCampo {
+  font-size: var(--t-pequeno);
+  color: var(--erro);
+  font-weight: 600;
+}
+
+/* Honeypot fora da tela */
+.pote {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.enviar {
+  justify-self: start;
+  min-width: 14rem;
+}
+.enviar:disabled {
+  opacity: 0.7;
+  cursor: progress;
+}
+
+.status:empty {
+  display: none;
+}
+
+.sucesso,
+.falha {
+  padding: 0.9rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+}
+.sucesso {
+  background: rgb(24 127 40 / 0.25);
+  border: 2px solid #3fcf55;
+}
+.falha {
+  background: rgb(255 143 128 / 0.12);
+  border: 2px solid var(--erro);
+}
+
+/* ---------- lateral ---------- */
+
+.lateral {
+  display: grid;
+  align-content: start;
+  gap: 1.25rem;
+}
+
+.lateralTitulo {
+  font-size: 2rem;
+  color: var(--creme);
+}
+
+.contatos {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+}
+.contatos li {
+  display: grid;
+  gap: 0.15rem;
+}
+
+.rotulo {
+  font-size: var(--t-pequeno);
+  font-weight: 600;
+  color: var(--laranja);
+}
+
+.local {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgb(245 233 211 / 0.15);
+  font-family: var(--fonte-titulo);
+  font-size: 1.4rem;
+  letter-spacing: 0.05em;
+}
+
+.lupulo {
+  width: 1.1rem;
+  height: auto;
+  color: var(--laranja);
+}
+
+@media (min-width: 40em) {
+  .linha {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 60em) {
+  .grade {
+    grid-template-columns: 2fr 1fr;
+    column-gap: 4rem;
+  }
+  .cabeca {
+    grid-column: 1 / -1;
+  }
+  .lateral {
+    padding-top: 1rem;
+  }
+}

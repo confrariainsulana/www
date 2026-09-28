@@ -1,0 +1,125 @@
+.cabeca {
+  display: grid;
+  justify-items: center;
+  gap: 1rem;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+/* ---------- filtros ---------- */
+
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.filtro {
+  min-height: 2.75rem;
+  padding: 0.4rem 1.1rem;
+  border: 2px solid rgb(245 233 211 / 0.35);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--creme);
+  font-family: var(--fonte-titulo);
+  font-size: 1.25rem;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    background-color 0.15s,
+    border-color 0.15s,
+    color 0.15s;
+}
+.filtro:hover {
+  border-color: var(--laranja);
+}
+.filtro[aria-pressed='true'] {
+  background: var(--laranja);
+  border-color: var(--laranja);
+  color: var(--roxo-profundo);
+}
+
+/* ---------- produtos ---------- */
+
+.grade {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 9.5rem), 1fr));
+  gap: 0.75rem;
+}
+
+@media (min-width: 48em) {
+  .grade {
+    grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
+    gap: 1.25rem;
+  }
+}
+
+.produto {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  background: var(--roxo-profundo);
+  border: 1px solid rgb(245 233 211 / 0.12);
+  border-radius: var(--raio);
+  color: var(--creme);
+  text-decoration: none;
+  transition:
+    transform 0.2s,
+    border-color 0.2s;
+}
+.produto:hover {
+  transform: translateY(-4px) rotate(-0.5deg);
+  border-color: var(--laranja);
+}
+
+.imagem {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  background: var(--roxo-medio);
+}
+
+.info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 0.85rem 0.75rem 1rem;
+}
+
+.categoria {
+  font-size: var(--t-pequeno);
+  font-weight: 600;
+  color: var(--laranja);
+}
+
+.nome {
+  flex: 1;
+  font-family: var(--fonte-titulo);
+  font-size: clamp(1.3rem, 1.1rem + 0.6vw, 1.6rem);
+  line-height: 1.05;
+  letter-spacing: 0.02em;
+}
+
+.comprar {
+  margin-top: 0.75rem;
+  padding: 0.55rem 0.5rem;
+  border-radius: 0.5rem;
+  line-height: 1.25;
+  background: #ffe600;
+  color: #2d3277;
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-align: center;
+}
+.produto:hover .comprar {
+  background: #fff159;
+}

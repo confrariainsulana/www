@@ -1,0 +1,233 @@
+.associe {
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 0%, rgb(75 42 92 / 0.6), transparent 70%),
+    var(--roxo-profundo);
+}
+
+.respingo {
+  position: absolute;
+  width: 20rem;
+  left: -8rem;
+  top: 30%;
+  color: var(--roxo-escuro);
+  pointer-events: none;
+}
+
+.conteudo {
+  position: relative;
+}
+
+.cabeca {
+  display: grid;
+  justify-items: center;
+  gap: 1rem;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+/* ---------- planos ---------- */
+
+.planos {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  display: grid;
+  gap: 2.5rem 1.5rem;
+  max-width: 58rem;
+}
+
+.plano {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  align-content: start;
+  gap: 0.75rem;
+  padding: 2.75rem 1.5rem 2rem;
+  text-align: center;
+  background: var(--roxo-medio);
+  border: 2px solid rgb(245 233 211 / 0.15);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+}
+
+.planoDestaque {
+  background: var(--laranja-claro);
+  color: var(--roxo-profundo);
+  border: 3px solid var(--creme);
+  transform: rotate(0.6deg);
+}
+
+.lupulo {
+  width: 2.25rem;
+  height: auto;
+  color: var(--laranja);
+}
+.planoDestaque .lupulo {
+  color: var(--roxo-profundo);
+}
+
+.selo {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -55%);
+  padding: 0.35rem 1.1rem;
+  background: var(--roxo-profundo);
+  color: var(--creme);
+  border: 2px solid var(--laranja-claro);
+  border-radius: 999px;
+  font-family: var(--fonte-titulo);
+  font-size: 1.3rem;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+.melhor {
+  position: absolute;
+  top: 1rem;
+  right: -0.4rem;
+  padding: 0.2rem 0.75rem;
+  background: var(--verde);
+  color: #fff;
+  font-family: var(--fonte-pincel);
+  font-size: 0.95rem;
+  transform: rotate(4deg);
+  border-radius: 0.25rem;
+  box-shadow: 0 0.25rem 0.5rem rgb(0 0 0 / 0.3);
+}
+
+.nome {
+  font-size: 1.9rem;
+  letter-spacing: 0.08em;
+}
+
+.preco {
+  display: grid;
+  justify-items: center;
+  line-height: 1;
+}
+
+.cheio {
+  font-family: var(--fonte-titulo);
+  font-size: 1.6rem;
+  text-decoration-thickness: 3px;
+}
+
+.valor {
+  display: flex;
+  align-items: flex-start;
+  font-family: var(--fonte-titulo);
+  font-size: clamp(4.5rem, 3.5rem + 4vw, 6.5rem);
+  line-height: 0.9;
+}
+
+.moeda,
+.centavos {
+  font-size: 0.4em;
+  margin-top: 0.25em;
+}
+.moeda {
+  margin-right: 0.15em;
+}
+
+.periodo {
+  margin-top: 0.4rem;
+  font-weight: 600;
+  font-size: var(--t-pequeno);
+  opacity: 0.85;
+}
+
+.textoPlano {
+  max-width: 22rem;
+  text-wrap: pretty;
+}
+
+/* ---------- passo a passo ---------- */
+
+.subtitulo {
+  margin: 4rem 0 1.5rem;
+  text-align: center;
+  font-size: var(--t-grande);
+  color: var(--creme);
+}
+
+.passos {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+  max-width: 58rem;
+  counter-reset: passo;
+}
+
+.passo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.numero {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: var(--laranja);
+  color: var(--roxo-profundo);
+  font-family: var(--fonte-titulo);
+  font-size: 1.9rem;
+  line-height: 1;
+  padding-top: 0.15rem;
+}
+
+/* ---------- CTA ---------- */
+
+.acao {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.botaoGrande {
+  width: 100%;
+  max-width: 34rem;
+  min-height: 4.25rem;
+  font-size: clamp(1.6rem, 1.2rem + 1.5vw, 2.2rem);
+  border-radius: 1rem;
+}
+
+.iconeBotao {
+  width: 1.8rem;
+  height: 1.8rem;
+  flex: none;
+}
+
+.lema {
+  margin-top: 2.5rem;
+  text-align: center;
+  font-size: clamp(1.9rem, 1.3rem + 2.2vw, 2.9rem);
+  line-height: 1.05;
+  letter-spacing: 0.01em;
+  color: var(--laranja);
+  text-wrap: balance;
+}
+
+@media (min-width: 48em) {
+  .planos {
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+  }
+  .passos {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  .passo {
+    flex-direction: column;
+    text-align: center;
+  }
+}

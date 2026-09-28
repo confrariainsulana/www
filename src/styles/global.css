@@ -1,0 +1,246 @@
+@import './variables.css';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--altura-header) + 0.5rem);
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--roxo-profundo);
+  color: var(--creme);
+  font-family: var(--fonte-texto);
+  font-size: var(--t-base);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Grão sutil em toda a página (SVG com ruído, bem leve) */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  pointer-events: none;
+  opacity: 0.07;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  font-family: var(--fonte-titulo);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: var(--laranja);
+  text-underline-offset: 0.2em;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid var(--laranja-claro);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+::selection {
+  background: var(--laranja);
+  color: var(--roxo-profundo);
+}
+
+/* ---------- utilitários compartilhados ---------- */
+
+.container {
+  width: 100%;
+  max-width: var(--largura);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.secao {
+  position: relative;
+  padding-block: var(--secao);
+}
+
+.secao--alt {
+  background-color: var(--roxo-escuro);
+}
+
+.titulo-secao {
+  font-size: var(--t-titulo);
+  color: var(--laranja);
+  text-wrap: balance;
+}
+
+.lead {
+  font-size: 1.125rem;
+  color: var(--creme-suave);
+  max-width: 38rem;
+  text-wrap: pretty;
+}
+
+.gotica {
+  font-family: var(--fonte-gotica);
+  font-weight: 800;
+}
+
+.pincel {
+  font-family: var(--fonte-pincel);
+  font-weight: 400;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.pular-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 200;
+  padding: 0.75rem 1rem;
+  background: var(--laranja);
+  color: var(--roxo-profundo);
+  font-weight: 700;
+  border-radius: var(--raio);
+  text-decoration: none;
+}
+.pular-link:focus {
+  top: 1rem;
+}
+
+/* Marcador de conteúdo pendente: fácil de achar na página */
+.completar {
+  background: repeating-linear-gradient(-45deg, #ffe45c33 0 6px, transparent 6px 12px);
+  outline: 1px dashed #ffe45c;
+  color: #ffe45c;
+  padding: 0 0.25em;
+  border-radius: 3px;
+}
+
+/* ---------- botões ---------- */
+
+.botao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6em;
+  min-height: 3rem;
+  padding: 0.7rem 1.5rem;
+  border: 2px solid transparent;
+  border-radius: 999px;
+  font-family: var(--fonte-titulo);
+  font-size: 1.35rem;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color 0.15s,
+    color 0.15s,
+    transform 0.15s;
+}
+.botao:active {
+  transform: translateY(1px);
+}
+
+.botao--laranja {
+  background: var(--laranja);
+  color: var(--roxo-profundo);
+}
+.botao--laranja:hover {
+  background: var(--laranja-claro);
+}
+
+.botao--contorno {
+  border-color: var(--creme);
+  color: var(--creme);
+  background: transparent;
+}
+.botao--contorno:hover {
+  background: var(--creme);
+  color: var(--roxo-profundo);
+}
+
+.botao--verde {
+  background: var(--verde);
+  color: #fff;
+  box-shadow:
+    0 0 0 3px #3fcf55 inset,
+    0 0.5rem 1.5rem rgb(24 127 40 / 0.35);
+}
+.botao--verde:hover {
+  background: var(--verde-escuro);
+}
+
+/* ---------- separador com lúpulo ---------- */
+
+.separador {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--laranja);
+  max-width: 16rem;
+}
+.separador span {
+  flex: 1;
+  height: 2px;
+  background: currentColor;
+  opacity: 0.6;
+}
+.separador__lupulo {
+  width: 1.5rem;
+  height: auto;
+}

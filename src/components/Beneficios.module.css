@@ -1,0 +1,65 @@
+.cabeca {
+  display: grid;
+  justify-items: center;
+  gap: 1rem;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.separador {
+  width: 16rem;
+}
+
+.grade {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1.25rem;
+}
+
+.cartao {
+  position: relative;
+  display: grid;
+  align-content: start;
+  gap: 0.9rem;
+  padding: 2rem 1.5rem 1.75rem;
+  background: var(--roxo-profundo);
+  border: 1px solid rgb(245 233 211 / 0.1);
+  border-top: 4px solid var(--laranja);
+  border-radius: 0.25rem 0.25rem var(--raio) var(--raio);
+}
+
+.icone {
+  width: 3.25rem;
+  height: 3.25rem;
+  color: var(--laranja);
+}
+
+.titulo {
+  font-size: 2rem;
+  color: var(--creme);
+}
+
+.texto {
+  color: var(--creme-suave);
+  text-wrap: pretty;
+}
+
+.rodape {
+  margin-top: 2.5rem;
+  text-align: center;
+  color: var(--creme-suave);
+}
+
+@media (min-width: 48em) {
+  .grade {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 72em) {
+  .grade {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

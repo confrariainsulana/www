@@ -1,0 +1,66 @@
+.confraria {
+  overflow: hidden;
+}
+
+.respingo {
+  position: absolute;
+  width: 22rem;
+  right: -8rem;
+  bottom: -6rem;
+  color: var(--roxo-escuro);
+  pointer-events: none;
+}
+
+.grade {
+  position: relative;
+  display: grid;
+  gap: 2rem;
+}
+
+.cabeca {
+  display: grid;
+  gap: 0.75rem;
+  align-content: start;
+}
+
+.desde {
+  font-size: 1.5rem;
+  color: var(--creme);
+  transform: rotate(-2deg);
+  transform-origin: left;
+}
+
+.historia {
+  display: grid;
+  gap: 1.25rem;
+  font-size: 1.125rem;
+  max-width: 40rem;
+}
+
+/* Primeira letra em destaque, como um rótulo artesanal */
+.historia p:first-child::first-letter {
+  float: left;
+  font-family: var(--fonte-titulo);
+  font-size: 4.2em;
+  line-height: 0.8;
+  margin: 0.08em 0.06em 0 0;
+  color: var(--laranja);
+}
+
+.lema {
+  font-family: var(--fonte-gotica);
+  font-weight: 800;
+  font-size: 1.15em;
+  color: var(--laranja);
+}
+
+@media (min-width: 48em) {
+  .grade {
+    grid-template-columns: minmax(14rem, 1fr) 2fr;
+    gap: 4rem;
+  }
+  .cabeca {
+    position: sticky;
+    top: calc(var(--altura-header) + 2rem);
+  }
+}

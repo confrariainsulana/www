@@ -1,0 +1,40 @@
+/* Identidade visual da Confraria Insulana.
+   Cores medidas no logo e no flyer, ajustadas para contraste AA. */
+:root {
+  /* Cores */
+  --roxo-profundo: #1a0d1f; /* fundo principal */
+  --roxo-escuro: #2a1233; /* seções alternadas */
+  --roxo-medio: #4b2a5c; /* cartões e destaques */
+  --roxo-claro: #6b3a85;
+  --laranja: #f28a1a; /* títulos e CTAs */
+  --laranja-claro: #fa9e25; /* cartão anual */
+  --laranja-escuro: #c5650e;
+  --creme: #f5e9d3; /* texto sobre escuro */
+  --creme-suave: #d9cbe0; /* texto secundário */
+  --verde: #187f28; /* botão de associação */
+  --verde-escuro: #136a20;
+  --erro: #ff8f80;
+
+  /* Tipografia */
+  --fonte-titulo: 'Bebas Neue', 'Oswald', Impact, 'Arial Narrow', sans-serif;
+  --fonte-gotica: 'Grenze Gotisch', 'Pirata One', Georgia, serif; /* chamadas: "Seja um associado!" e o lema */
+  --fonte-pincel: 'Permanent Marker', 'Comic Sans MS', cursive;
+  --fonte-texto: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  /* Escala tipográfica (modular, razão ~1.25, fluida) */
+  --t-pequeno: 0.875rem;
+  --t-base: 1rem;
+  --t-medio: 1.25rem;
+  --t-grande: clamp(1.75rem, 1.3rem + 2vw, 2.5rem);
+  --t-titulo: clamp(2.75rem, 2rem + 3.5vw, 4.5rem);
+  --t-gigante: clamp(3rem, 1.8rem + 6vw, 6.5rem);
+
+  /* Espaços */
+  --gutter: clamp(1rem, 0.5rem + 2.5vw, 2.5rem);
+  --secao: clamp(4rem, 3rem + 5vw, 7.5rem);
+  --largura: 72rem;
+  --altura-header: 4.25rem;
+
+  --raio: 0.75rem;
+  --sombra: 0 0.75rem 2rem rgb(0 0 0 / 0.35);
+}
