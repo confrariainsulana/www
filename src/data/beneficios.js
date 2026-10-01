@@ -46,12 +46,12 @@ export const planos = [
   {
     id: 'anual',
     nome: 'Contribuição anual',
-    valor: '378',
+    valor: '399',
     centavos: '00',
     valorCheio: 'R$ 420,00',
     periodo: 'por ano',
-    selo: '10% de desconto',
-    texto: 'Pague o ano inteiro com 10% de desconto e garanta seus benefícios por mais tempo.',
+    selo: '5% de desconto',
+    texto: 'Pague o ano inteiro com 5% de desconto e garanta seus benefícios por mais tempo.',
     destaque: true,
   },
 ]

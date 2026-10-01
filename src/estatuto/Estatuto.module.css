@@ -1,0 +1,335 @@
+/* Página do Estatuto: cabeçalho escuro da marca + texto em "papel" creme para leitura longa. */
+
+.topo {
+  background:
+    radial-gradient(60rem 20rem at 85% 0%, rgb(242 138 26 / 0.18), transparent 70%),
+    var(--roxo-escuro);
+  border-bottom: 4px solid var(--laranja);
+}
+
+.topoInterno {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.5rem;
+  max-width: var(--largura);
+  margin-inline: auto;
+  padding: 1.5rem var(--gutter);
+}
+
+.logo {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  border: 3px solid var(--laranja);
+  object-fit: cover;
+}
+
+.marca {
+  font-size: var(--t-pequeno);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--creme-suave);
+}
+
+.titulo {
+  font-size: clamp(2.25rem, 1.6rem + 3vw, 3.75rem);
+  color: var(--laranja);
+  text-wrap: balance;
+}
+
+.imprimir {
+  margin-left: auto;
+  font-size: 1.1rem;
+  min-height: 2.75rem;
+}
+
+/* ---------- grade: sumário + texto ---------- */
+
+.grade {
+  display: grid;
+  gap: 1.5rem;
+  max-width: var(--largura);
+  margin-inline: auto;
+  padding: 1.5rem var(--gutter) 4rem;
+}
+
+@media (min-width: 64rem) {
+  .grade {
+    grid-template-columns: 17rem minmax(0, 1fr);
+    align-items: start;
+    gap: 2.5rem;
+    padding-top: 2.5rem;
+  }
+  .sumario {
+    position: sticky;
+    top: 1.5rem;
+    max-height: calc(100vh - 3rem);
+    overflow-y: auto;
+  }
+}
+
+.sumarioCaixa {
+  background: var(--roxo-escuro);
+  border: 1px solid var(--roxo-medio);
+  border-radius: var(--raio);
+  padding: 0.75rem 1rem;
+}
+
+.sumarioTitulo {
+  font-family: var(--fonte-titulo);
+  font-size: 1.5rem;
+  letter-spacing: 0.06em;
+  color: var(--laranja);
+  cursor: pointer;
+}
+
+.sumarioLista {
+  margin: 0.5rem 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.875rem;
+  line-height: 1.35;
+}
+.sumarioLista li + li {
+  margin-top: 0.15rem;
+}
+.sumarioLista a {
+  display: block;
+  padding: 0.35rem 0.5rem;
+  border-radius: 6px;
+  color: var(--creme-suave);
+  text-decoration: none;
+}
+.sumarioLista a:hover {
+  background: var(--roxo-medio);
+  color: var(--creme);
+}
+
+/* ---------- o "papel" ---------- */
+
+.papel {
+  --tinta: #2a1233;
+  --tinta-suave: #5a4566;
+  --destaque-tinta: #8f4305; /* laranja escurecido: contraste AA sobre o creme */
+
+  position: relative;
+  z-index: 101; /* acima do grão do body */
+  background: #fbf5ea;
+  color: var(--tinta);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+  padding: clamp(1.25rem, 0.5rem + 4vw, 3.5rem);
+  font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  min-width: 0;
+}
+
+.papel a {
+  color: var(--destaque-tinta);
+  overflow-wrap: anywhere;
+}
+
+.capitulo {
+  margin: 3rem 0 1rem;
+  padding-top: 1rem;
+  border-top: 2px solid #e6d6bd;
+  font-size: clamp(1.75rem, 1.4rem + 1.5vw, 2.4rem);
+  color: var(--roxo-medio);
+  line-height: 1.05;
+  text-wrap: balance;
+  scroll-margin-top: 1rem;
+}
+.capitulo:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+
+.rotuloCapitulo {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-family: var(--fonte-texto);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--destaque-tinta);
+}
+
+.artigo {
+  margin: 1.75rem 0 0.5rem;
+  font-family: var(--fonte-texto);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.35;
+  color: var(--tinta);
+  scroll-margin-top: 1rem;
+}
+
+.numeroArtigo {
+  color: var(--destaque-tinta);
+  margin-right: 0.15em;
+}
+
+.paragrafo {
+  margin: 0 0 0.85rem;
+  text-wrap: pretty;
+}
+
+.lista {
+  margin: 0.25rem 0 1rem;
+  padding-left: 0;
+  list-style: none;
+}
+.lista > li {
+  position: relative;
+  padding-left: 1.1rem;
+  margin-bottom: 0.4rem;
+}
+.lista > li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background: var(--laranja);
+}
+.lista strong {
+  color: var(--destaque-tinta);
+}
+
+.sublista {
+  margin: 0.35rem 0 0.25rem;
+  padding-left: 1rem;
+  list-style: none;
+  border-left: 2px solid #e6d6bd;
+}
+.sublista li {
+  margin-bottom: 0.2rem;
+}
+
+.destaque {
+  margin: 1rem 0 1.25rem;
+  padding: 1rem 1.25rem;
+  background: #f3e6cf;
+  border-left: 4px solid var(--laranja);
+  border-radius: 0 var(--raio) var(--raio) 0;
+}
+.destaque .paragrafo:last-child {
+  margin-bottom: 0;
+}
+
+.tabelaRolagem {
+  margin: 1rem 0 1.25rem;
+  overflow-x: auto;
+}
+
+.tabela {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--fonte-texto);
+  font-size: 0.9375rem;
+  line-height: 1.45;
+}
+.tabela th,
+.tabela td {
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid #e6d6bd;
+  text-align: left;
+  vertical-align: top;
+}
+.tabela thead th {
+  background: var(--roxo-medio);
+  color: var(--creme);
+  font-weight: 700;
+}
+.tabela tbody th {
+  font-weight: 600;
+  width: 38%;
+}
+.tabela tbody tr:nth-child(even) {
+  background: #f6ecdb;
+}
+
+.assinaturas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 3rem 2rem;
+  margin-top: 3.5rem;
+  font-family: var(--fonte-texto);
+  font-size: 0.9rem;
+  text-align: center;
+}
+.linhaAssinatura {
+  display: block;
+  margin-bottom: 0.5rem;
+  border-top: 1px solid var(--tinta);
+}
+
+.voltar {
+  margin-top: 3rem;
+  font-family: var(--fonte-texto);
+  font-size: 0.9rem;
+  text-align: right;
+}
+
+/* ---------- impressão / PDF ---------- */
+
+@media print {
+  :global(body) {
+    background: #fff !important;
+    color: #000;
+  }
+  :global(body)::before,
+  :global(.pular-link),
+  .sumario,
+  .imprimir,
+  .voltar {
+    display: none !important;
+  }
+  .topo {
+    background: none;
+    border-bottom: 2px solid #000;
+  }
+  .marca,
+  .titulo {
+    color: #000;
+  }
+  .grade {
+    display: block;
+    padding: 0;
+  }
+  .papel {
+    background: none;
+    box-shadow: none;
+    padding: 0;
+    font-size: 11pt;
+    --tinta: #000;
+    --destaque-tinta: #000;
+  }
+  .capitulo {
+    color: #000;
+    break-after: avoid;
+  }
+  .artigo {
+    break-after: avoid;
+  }
+  .lista li,
+  .tabela tr,
+  .assinaturas {
+    break-inside: avoid;
+  }
+  .tabela thead th {
+    background: #eee;
+    color: #000;
+  }
+  .papel a {
+    color: #000;
+    text-decoration: none;
+  }
+}

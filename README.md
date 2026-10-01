@@ -107,6 +107,17 @@ Para **adicionar** um produto, copie um bloco `{ … }` e ajuste. Para **remover
 
 Para criar uma **nova categoria**, adicione em `categorias` (no mesmo arquivo) e use o mesmo `id` no campo `categoria` dos produtos.
 
+## Página do Estatuto
+
+O Estatuto é uma página separada, sem link no menu nem no rodapé do site, e fora dos buscadores (`noindex`). Para mostrá-lo a alguém, envie o link direto:
+
+https://confrariainsulana.github.io/www/estatuto.html
+
+- O texto fica em `src/estatuto/estatuto.md`. Para mudar o Estatuto, edite só esse arquivo.
+- Formatação aceita: `##` capítulo, `###` artigo, `- ` item de lista (`  - ` para subitem), `> ` destaque, tabelas com `|`, `**negrito**` e `[texto](link)`.
+- Cada artigo tem um link próprio, como `estatuto.html#art-20`.
+- O botão "Imprimir / salvar PDF" gera uma versão limpa para impressão.
+
 ## Onde editar cada coisa
 
 | Conteúdo | Arquivo |
